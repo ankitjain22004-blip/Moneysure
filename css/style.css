@@ -280,3 +280,219 @@ footer .note{color:#a8bbb2}
   .hero-cta .btn{flex:1 1 100%}
   .floating-contact{right:12px}
 }
+
+
+/* ==========================================================
+   Final responsive layout pass — mobile, tablet and desktop
+   ========================================================== */
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+img, svg, video, canvas, iframe{max-width:100%}
+.w, main, section, header, footer,
+.grid, .hg, .about-layout, .calc, .cg, .fg{min-width:0}
+.grid > *, .hg > *, .about-layout > *, .calc > *,
+.cg > *, .fg > *, .team > *, .office-body{min-width:0}
+p, h1, h2, h3, h4, a, label, address{overflow-wrap:break-word}
+input, select, textarea, button{max-width:100%;font:inherit}
+button, a, summary{-webkit-tap-highlight-color:transparent}
+section[id]{scroll-margin-top:90px}
+
+/* Tablet */
+@media (max-width: 1000px){
+  .w{padding-left:22px;padding-right:22px}
+  .nav{gap:14px}
+  nav ul{gap:2px}
+  nav a{padding-left:9px;padding-right:9px;font-size:.91rem}
+  .hg{grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:28px}
+  .hero{padding:58px 0 52px}
+  .hero .lead{font-size:1.04rem}
+  .hero-cta{flex-wrap:wrap}
+  .hero-cta .btn{flex:1 1 220px;white-space:normal}
+  .about-layout{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:28px}
+  .fg{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+  .cg{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px}
+  #f{position:static}
+}
+
+/* Mobile and small tablets */
+@media (max-width: 860px){
+  .nav{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    height:72px;
+  }
+  .nav > a:first-child{display:flex;align-items:center;flex:0 0 auto;margin-right:auto}
+  .nav .logo{display:block;height:54px;width:auto;max-width:170px}
+  #mb{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 46px;
+    width:46px;
+    height:46px;
+    margin:0 0 0 auto;
+    padding:0;
+    line-height:1;
+    font-size:1.45rem;
+    position:relative;
+    z-index:52;
+  }
+  .nav nav{
+    position:absolute;
+    display:block;
+    left:0;
+    right:0;
+    top:100%;
+    width:100%;
+    margin:0;
+    z-index:51;
+  }
+  .nav nav ul{
+    position:static;
+    display:none;
+    width:100%;
+    max-height:calc(100dvh - 82px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    flex-direction:column;
+    align-items:stretch;
+    gap:2px;
+    margin:0;
+    padding:10px 14px 16px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-top:0;
+    border-radius:0 0 16px 16px;
+    box-shadow:0 14px 24px rgba(15,50,38,.14);
+  }
+  .nav nav ul.open{display:flex}
+  .nav nav li{display:block;width:100%}
+  .nav nav a{
+    display:flex;
+    align-items:center;
+    width:100%;
+    min-height:46px;
+    padding:12px 12px;
+    font-size:1rem;
+    border-radius:10px;
+  }
+  .nav nav a.btn{justify-content:center;margin:6px 0 0}
+  .nav nav a:not(.btn):after{display:none}
+  .hg{
+    grid-template-columns:minmax(0,1fr);
+    gap:28px;
+  }
+  .hg > div:first-child{min-width:0}
+  .hero{padding:44px 0 48px}
+  .hero h1{max-width:760px}
+  .hero .lead{max-width:760px;font-size:1.02rem}
+  .hv{width:100%;max-width:620px;margin:0 auto}
+  .about-layout,.calc,.cg{grid-template-columns:minmax(0,1fr);gap:26px}
+  .team{max-width:680px}
+  .banks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fg{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #f{position:static}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:10px}
+  .hero-cta .btn{flex:1 1 200px;min-width:0;white-space:normal}
+}
+
+/* Phones */
+@media (max-width: 560px){
+  html{scroll-padding-top:76px}
+  section[id]{scroll-margin-top:76px}
+  body{font-size:16px;line-height:1.62}
+  .w{padding-left:16px;padding-right:16px}
+  section{padding:48px 0}
+  .nav{height:68px;gap:10px}
+  .nav .logo{height:49px;max-width:155px}
+  #mb{width:44px;height:44px;flex-basis:44px;font-size:1.35rem}
+  .nav nav ul{max-height:calc(100dvh - 68px);padding:8px 12px 14px}
+  h1{font-size:clamp(2rem,8.5vw,2.55rem);line-height:1.12}
+  h2{font-size:clamp(1.65rem,7vw,2.15rem);line-height:1.18}
+  h3{font-size:1.12rem}
+  .sec-title{font-size:clamp(2rem,8vw,2.6rem)}
+  .eyebrow{font-size:.72rem;letter-spacing:.1em}
+  .lead,.hero .lead{font-size:.98rem;line-height:1.65}
+  .hero{padding:36px 0 42px}
+  .hg{gap:22px}
+  .hero-cta{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:20px}
+  .hero-cta .btn,.cta .btn,.loan-cta .btn{
+    width:100%;
+    min-width:0;
+    min-height:46px;
+    flex:none;
+    white-space:normal;
+    padding:12px 16px;
+  }
+  .hv{padding:18px;border-radius:19px}
+  .hv img{width:128px;max-width:68%;height:auto}
+  .hv small{font-size:.76rem}
+  .feat-sec{margin-top:0;padding:18px 0 0}
+  .grid{grid-template-columns:minmax(0,1fr);gap:14px}
+  .card{padding:19px;border-radius:16px}
+  .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .team img{height:170px}
+  .team .tb{padding:12px}
+  .team h3{font-size:.98rem}
+  .team .tag{font-size:.68rem}
+  .team .tb p{font-size:.79rem}
+  .calc{padding:18px;gap:18px}
+  .row{flex-wrap:wrap;gap:10px}
+  .row input[type=number]{width:100%;max-width:150px}
+  .res{grid-template-columns:minmax(0,1fr);gap:8px}
+  .res div{padding:11px}
+  canvas{max-width:100%;height:auto}
+  .banks{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .bank-item{min-width:0;min-height:70px;padding:9px 8px;gap:8px}
+  .bank-logo{width:36px;min-width:36px;height:36px}
+  .bank-logo img{width:34px;height:34px}
+  .bank-name{font-size:.78rem;line-height:1.25}
+  .office{padding:14px;gap:11px}
+  .pin{width:40px;height:40px}
+  .office.head{padding:17px}
+  .office.head .pin{width:46px;height:46px}
+  .office address{font-size:.88rem}
+  .branch-label{font-size:.74rem}
+  .loan-cta{padding:19px 15px}
+  summary{min-height:48px;padding:14px 46px 14px 15px;font-size:.95rem}
+  details p{padding:0 15px 15px;font-size:.94rem}
+  #f{padding:19px}
+  .contact-list li{align-items:flex-start;gap:10px}
+  .ci-ic{width:40px;height:40px}
+  .fg{grid-template-columns:minmax(0,1fr);gap:22px}
+  footer{padding:42px 0 112px;font-size:.9rem}
+  .fbot{margin-top:24px;padding-top:18px}
+  .floating-contact{
+    right:10px;
+    bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    gap:7px;
+  }
+  .fab{min-height:40px;padding:8px 12px;font-size:.78rem;gap:6px}
+  .fab svg{width:18px;height:18px}
+}
+
+/* Very narrow phones */
+@media (max-width: 380px){
+  .w{padding-left:13px;padding-right:13px}
+  .nav .logo{height:45px;max-width:142px}
+  #mb{width:42px;height:42px;flex-basis:42px}
+  .team{grid-template-columns:minmax(0,1fr)}
+  .team img{height:210px}
+  .banks{grid-template-columns:minmax(0,1fr)}
+  .bank-item{min-height:64px}
+  .office{padding:12px;gap:9px}
+  .pin{width:36px;height:36px}
+  .office.head .pin{width:42px;height:42px}
+  .floating-contact{right:8px}
+}
+
+/* Touch devices: avoid hover movement that can feel jumpy */
+@media (hover:none){
+  .grid>.card:hover,.team .card:hover,.office:hover,.bank-item:hover,.fab:hover{transform:none}
+}
